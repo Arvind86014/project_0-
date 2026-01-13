@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Tech Mobile Repairing</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .black {
+        color: black;
+    }
+
+    .blue {
+        color: blue;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 800;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    #he {
+        padding: 10px;
+        transition: all 0.3s ease;
+    }
+
+    #he:hover {
+        background: linear-gradient(135deg, rgb(234, 240, 119), lightcoral, rgb(243, 144, 228));
+        transform: scale(1.1);
+        border-radius: 8px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    #he a {
+        color: #333;
+    }
+
+    #he a:hover {
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+        background: url("assest/a5.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        height: auto;
+        width: 100%;
+        background: linear-gradient(135deg, rgb(234, 240, 119), lightcoral, rgb(243, 144, 228));
+        text-align: center;
+        font-size: clamp(36px, 8vw, 72px);
+        padding: 20px;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: lightcyan;
+        padding: 10px 20px;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    table {
+        width: 100%;
+        background-color: lightcyan;
+        font-size: clamp(14px, 4vw, 24px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: flex;
+        }
+        .navbar-container{
+            position: relative;
+        }
+
+        table {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: lightcyan;
+            flex-direction: column;
+            width: 100%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        table.active {
+            display: flex;
+        }
+
+        tr {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        td {
+            width: 100%;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td:last-child {
+            border-bottom: none;
+        }
+
+        #he {
+            padding: 0;
+        }
+
+        #he:hover {
+            background: linear-gradient(135deg, rgb(234, 240, 119), lightcoral, rgb(243, 144, 228));
+            transform: translateX(10px);
+            border-radius: 0;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .navbar-container {
+            display: none;
+        }
+    }
+
+    footer {
+        height: auto;
+        width: 100%;
+        background-color: black;
+        text-align: center;
+        font-size: clamp(14px, 3vw, 20px);
+        padding: 20px;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    footer:hover {
+        background: linear-gradient(135deg, #000, #333);
+        padding: 25px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <span class="red">A</span><span class="black">J</span>
+                <span class="blue">Tech</span> Mobile Repairing
+            </h1>
+            <div class="navbar-container">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <table cellspacing="0" id="navTable">
+                <tr>
+                    <td id="he"><a href="#home">Home</a></td>
+                    <td id="he"><a href="#about">About</a></td>
+                    <td id="he"><a href="#services">Services</a></td>
+                    <td id="he"><a href="#accessories">Accessories</a></td>
+                    <td id="he"><a href="#gallery">Gallery</a></td>
+                    <td id="he"><a href="#contact">Contact</a></td>
+                </tr>
+            </table>
+        </header>
+        <footer>
+            &copy; 2026 AJ Tech Mobile Repairing. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navTable = document.getElementById('navTable');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navTable.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navTable.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navTable.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
